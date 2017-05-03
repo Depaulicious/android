@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+
+  <remote name="meijjaa"
+           fetch="https://github.com/meijjaa" />
+
+  <remote  name="x86"
+           fetch="git://git.osdn.net/gitroot/android-x86/" />
+
+  <default revision="refs/heads/cm-14.1"
+           remote="github"
+           sync-c="true"
+           sync-j="4" />
+
+  <project path="device/lenovo/thinkpad-x1yoga" name="Depaulicious/android_device_lenovo_thinkpad-x1yoga" remote="github" revision="cm-14.1-x86" />
+
+  <remove-project name="LineageOS/android_bionic" />
+  <remove-project name="LineageOS/android_frameworks_av" />
+  <remove-project name="LineageOS/android_frameworks_base" />
+  <remove-project name="LineageOS/android_frameworks_native" />
+  <remove-project name="LineageOS/android_system_core" />
+  <remove-project name="LineageOS/android_system_extras" />
+  <remove-project name="platform/external/drm_gralloc" />
+  <remove-project name="platform/external/drm_hwcomposer" />
+  <remove-project name="platform/external/libdrm" />
+  <remove-project name="platform/external/llvm" />
+  <remove-project name="platform/hardware/intel/audio_media" />
+  <remove-project name="LineageOS/android_hardware_ril" />
+  <remove-project name="LineageOS/android_system_vold" />
+  <remove-project name="LineageOS/android_build" />
+  <remove-project name="device/generic/common" />
+  <remove-project name="device/generic/x86" />
+  <remove-project name="device/generic/x86_64" />
+  <remove-project name="LineageOS/android_external_ffmpeg"/>
+  <remove-project name="LineageOS/android_external_stagefright-plugins"/>
+
+<!-- BEGIN ANDROID-X86 -->
+  <!-- <project path="kernel" name="kernel" remote="x86" revision="kernel-4.4" /> -->
+  <project path="kernel" name="maurossi/linux" remote="github" revision="kernel-4.11" />
+  <project path="bootable/newinstaller" name="bootable-newinstaller" remote="x86" revision="nougat-x86" />
+  <project path="device/generic/firmware" name="device-generic-firmware" remote="x86" revision="nougat-x86" />
+  <project path="external/alsa-lib" name="external-alsa-lib" remote="x86" revision="nougat-x86" />
+  <project path="external/alsa-utils" name="external-alsa-utils" remote="x86" revision="nougat-x86" />
+  <project path="external/bluetooth/bluez" name="external-bluetooth-bluez" remote="x86" revision="nougat-x86" />
+  <project path="external/bluetooth/glib" name="external-bluetooth-glib" remote="x86" revision="nougat-x86" />
+  <project path="external/bluetooth/sbc" name="external-bluetooth-sbc" remote="x86" revision="nougat-x86" />
+  <project path="external/busybox" name="external-busybox" remote="x86" revision="nougat-x86" />
+  <project path="external/drm_gralloc" name="external-drm_gralloc" remote="x86" revision="nougat-x86" />
+  <project path="external/drm_hwcomposer" name="external-drm_hwcomposer" groups="drm_hwcomposer" remote="x86" revision="nougat-x86" />
+  <project path="external/eject" name="external-eject" remote="x86" revision="nougat-x86" />
+  <project path="external/googleanalytics" name="external-googleanalytics" remote="x86" revision="nougat-x86" />
+  <project path="external/libpciaccess" name="external-libpciaccess" remote="x86" revision="marshmallow-x86" />
+  <project path="external/libdrm" name="external-libdrm" remote="x86" revision="nougat-x86" />
+  <project path="external/llvm" name="external-llvm" groups="pdk" remote="x86" revision="nougat-x86" />
+  <project path="external/mesa" name="external-mesa" remote="x86" revision="nougat-x86" />
+  <project path="external/s2tc" name="external-s2tc" remote="x86" revision="nougat-x86" />
+  <project path="external/v86d" name="external-v86d" remote="x86" revision="nougat-x86" />
+  <project path="hardware/gps" name="hardware-gps" remote="x86" revision="nougat-x86" />
+  <project path="hardware/intel/audio_media" name="hardware-intel-audio_media" groups="intel" remote="x86" revision="nougat-x86" />
+  <project path="hardware/intel/libsensors" name="hardware-intel-libsensors" remote="x86" revision="nougat-x86"/>
+  <project path="hardware/libaudio" name="hardware-libaudio" remote="x86" revision="nougat-x86" />
+  <project path="hardware/libcamera" name="hardware-libcamera" remote="x86" revision="nougat-x86" />
+  <project path="hardware/liblights" name="hardware-liblights" remote="x86" revision="nougat-x86" />
+  <project path="hardware/libsensors" name="hardware-libsensors" remote="x86" revision="nougat-x86" />
+  <project path="hardware/ril" name="hardware-ril" groups="pdk" remote="x86" revision="nougat-x86" />
+  <project path="hardware/x86power" name="hardware-x86power" remote="x86" revision="nougat-x86" />
+  <project path="packages/apps/TSCalibration2" name="packages-apps-TSCalibration2" remote="x86" revision="nougat-x86" />
+  <project path="packages/services/Analytics" name="packages-services-Analytics" remote="x86" revision="nougat-x86" />
+  <project path="system/vold" name="system-vold" remote="x86" revision="nougat-x86" />
+
+<!-- END ANDROID-X86 -->
+
+<!-- BEGIN LineageOS-X86 -->
+  <project path="build" name="platform/build" groups="pdk" remote="x86" revision="cm-14.1-x86" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+  </project>
+  <project path="bionic" name="platform/bionic" remote="x86" groups="pdk" revision="cm-14.1-x86" />
+
+  <project path="device/generic/common" name="device/generic/common" groups="pdk" remote="x86" revision="cm-14.1-x86" />
+  <project path="device/generic/android_x86" name="device/generic/x86" groups="pdk" remote="x86" revision="cm-14.1-x86" />
+  <project path="device/generic/android_x86_64" name="device/generic/x86_64" groups="pdk" remote="x86" revision="cm-14.1-x86" />
+  <project path="external/ffmpeg" name="android_external_ffmpeg" remote="meijjaa" revision="cm-14.1-x86" />
+  <project path="external/stagefright-plugins" name="android_external_stagefright-plugins" remote="meijjaa" revision="cm-14.1-x86" />
+  <project path="frameworks/av" name="platform/frameworks/av" remote="x86" revision="cm-14.1-x86" />
+  <project path="frameworks/base" name="platform/frameworks/base" remote="x86" revision="cm-14.1-x86" />
+  <project path="frameworks/native" name="platform/frameworks/native" remote="x86" revision="cm-14.1-x86" />
+  <project path="hardware/intel/intel-driver" name="platform/hardware/intel/intel-driver" remote="x86" revision="cm-14.1-x86" />
+  <project path="hardware/intel/libva" name="platform/hardware/intel/libva" remote="x86" revision="cm-14.1-x86" />
+  <project path="hardware/powerbtnd" name="platform/hardware/powerbtnd" remote="x86" revision="cm-14.1-x86" />
+  <project path="system/core" name="platform/system/core" remote="x86" revision="cm-14.1-x86" />
+  <project path="system/extras" name="platform/system/extras" remote="x86" revision="cm-14.1-x86" />
+<!-- END LineageOS-X86 -->
+
+</manifest>
